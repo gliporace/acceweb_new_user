@@ -1,0 +1,12 @@
+/.vscode
+/build
+/db
+/debug.log
+/dist
+/main - Copia.exe
+/main.build
+/main.dist
+/main.exe
+/main.spec
+/python39.dll
+/__pycache__
