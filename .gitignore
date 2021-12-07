@@ -10,3 +10,5 @@
 /main.spec
 /python39.dll
 /__pycache__
+acceweb_user/__pycache__/acceweb_user.cpython-39.pyc
+.gitignore

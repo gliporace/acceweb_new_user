@@ -40,7 +40,7 @@ ELENCO_REPARTI_VC = ['301',
                      '505',
 #                    '506',
 #                    '507', # pneumologia covid19
-                     '508' # covid vercelli
+#                    '508' # covid vercelli
 ]
 
 ELENCO_REPARTI_BS = ['3011',
@@ -58,7 +58,7 @@ ELENCO_REPARTI_BS = ['3011',
                      '1041',
                      '2051',
                      '2061',
-                     '1061',
+#                    '1061',
                      '4061',
                      '1071']
 
