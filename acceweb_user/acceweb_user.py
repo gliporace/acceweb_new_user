@@ -37,10 +37,10 @@ ELENCO_REPARTI_VC = ['301',
                      '205',
                      '503',
                      '504',
-                     '505',
-#                    '506',
-#                    '507', # pneumologia covid19
-#                    '508' # covid vercelli
+                     '505', # malattie infettive covid19
+                     '506', # medicina covid19
+                     '507', # pneumologia covid19
+#                    '508'  # covid19 vercelli
 ]
 
 ELENCO_REPARTI_BS = ['3011',
@@ -58,7 +58,7 @@ ELENCO_REPARTI_BS = ['3011',
                      '1041',
                      '2051',
                      '2061',
-#                    '1061',
+#                    '1061', # covid19 borgosesia
                      '4061',
                      '1071']
 
@@ -101,14 +101,14 @@ class AccewebUser():
         self.browser.close()
 
     def create_user(self, matricola, cognome, nome, password=None):
-        """ Crea un nuovo utente; se viene specificata una password allora viene effettuato un cambio password
-            di un utente esistente
+        """ Crea un nuovo utente; se viene specificata una password allora viene effettuato un 
+            cambio password di un utente esistente
 
         Args:
             matricola: matricola del dipendente; viene utilizzata per impostare il nome utente
             cognome, nome: cognome e nome del dipendente
-            password: se viene specificato, viene effettuato un cambio password di utente già esistente, 
-                      altrimenti viene utilizzata la password di default
+            password: se viene specificato, viene effettuato un cambio password di utente già esistente,
+            altrimenti viene utilizzata la password di default
         """
         self.change_frame("menu")
         try:
