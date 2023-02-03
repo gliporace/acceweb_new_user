@@ -11,7 +11,7 @@ from time import sleep
 DEFAULT_PASSWORD = "vercelli"
 
 ELENCO_REPARTI_VC = ['301',
- #                   '9601',
+                     '9601',
                      '102',
                      '0205',
                      '0201',
@@ -40,7 +40,7 @@ ELENCO_REPARTI_VC = ['301',
                      '505', # malattie infettive covid19
                      '506', # medicina covid19
                      '507', # pneumologia covid19
-#                    '508'  # covid19 vercelli
+                     '508'  # covid19 vercelli
 ]
 
 ELENCO_REPARTI_BS = ['3011',
@@ -137,13 +137,17 @@ class AccewebUser():
                 EC.presence_of_element_located((By.ID, "bloccoHelp"))
         )
         sleep(0.5)
-        rep = self.browser.find_element_by_id("helpsearchpattern%s" % (reparto, ))
-        print("Reparto: " + reparto)
-        print("Profilo: " + profilo)
-        ac.double_click(rep).perform()
-        prof = Select(self.browser.find_element_by_id('profilo'))
-        prof.select_by_value(profilo)
-        self.browser.find_element_by_id('buttonAddProfilo').click()
+        try:
+            rep = self.browser.find_element_by_id("helpsearchpattern%s" % (reparto, ))
+            print("Reparto: " + reparto)
+            print("Profilo: " + profilo)
+            ac.double_click(rep).perform()
+            prof = Select(self.browser.find_element_by_id('profilo'))
+            prof.select_by_value(profilo)
+            self.browser.find_element_by_id('buttonAddProfilo').click()
+        except NoSuchElementException:
+            print("Reparto %s non attivo" % (reparto))
+            self.browser.find_element_by_id('cognome').click()
 
     def save_user(self):
         self.browser.find_element_by_id("buttonInserisci").click()
